@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 
 /**
  *
- * @author melis
+ * @author meli
  */
 public class DAODepartamento implements IDAOGeneral<Departamento, Long> {
 

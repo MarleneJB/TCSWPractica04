@@ -21,8 +21,8 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- Mapping files or annotated classes -->
-        <mapping class="org.uv.tcswpractica05.Empleados"/>
-        <mapping class="org.uv.tcswpractica05.Departamento"/>
+        <mapping class="org.uv.tcswpractica04.Empleados"/>
+        <mapping class="org.uv.tcswpractica04.Departamento"/>
         
     </session-factory>
 </hibernate-configuration>

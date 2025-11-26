@@ -11,7 +11,7 @@ import org.hibernate.Criteria;
 
 /**
  *
- * @author melis
+ * @author meli
  */
 public class DAOEmpleado implements IDAOGeneral<Empleados, Long> { 
     //ambiente grafico y el crud completo en hibernate swinng

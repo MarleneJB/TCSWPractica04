@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author melis
+ * @author meli
  */
 @Entity
 @Table(name = "departamentos")
