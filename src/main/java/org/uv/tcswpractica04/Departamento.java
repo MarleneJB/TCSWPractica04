@@ -6,6 +6,7 @@ package org.uv.tcswpractica04;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -69,7 +70,7 @@ public class Departamento {
 
     @Override
     public String toString() {
-        return nombre != null ? nombre : ("Departamento " + (clave != null ? clave : ""));
+        return nombre != null ? nombre : "Departamento " + Objects.toString(clave, "");
     }
 }
 

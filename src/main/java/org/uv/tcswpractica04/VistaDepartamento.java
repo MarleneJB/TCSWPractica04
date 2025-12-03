@@ -4,6 +4,7 @@
  */
 package org.uv.tcswpractica04;
 
+import java.util.Comparator;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -336,6 +337,7 @@ public class VistaDepartamento extends javax.swing.JFrame {
             List<Departamento> departamentos = daoDepartamento.findAll();
             DefaultTableModel modelo = (DefaultTableModel) jTable4.getModel();
             modelo.setRowCount(0);
+            departamentos.sort(Comparator.comparing(Departamento::getClave));
             for (Departamento d : departamentos) {
                 Object[] fila = { d.getClave(), d.getNombre() };
                 modelo.addRow(fila);

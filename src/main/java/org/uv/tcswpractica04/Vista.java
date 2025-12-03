@@ -6,6 +6,7 @@ package org.uv.tcswpractica04;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Comparator;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -138,7 +139,6 @@ public class Vista extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -495,15 +495,15 @@ public class Vista extends javax.swing.JFrame {
             
             // Limpiar la tabla
             modelo.setRowCount(0);
-            
-           
+            //orden
+           empleados.sort(Comparator.comparing(Empleados::getClave));
             for (Empleados emp : empleados) {
                 Object[] fila = {
                     emp.getClave(),        
                     emp.getNombre(),       
                     emp.getDireccion(),    
                     emp.getTelefono(),
-                    (emp.getDepartamento() != null ? emp.getDepartamento().getNombre() : "")
+                    (emp.getDepartamento() != null ? emp.getDepartamento().getNombre(): "")
                 };
                 modelo.addRow(fila);
             }
@@ -535,7 +535,7 @@ public class Vista extends javax.swing.JFrame {
             for (Departamento d : departamentos) {
                 model.addElement(d);
             }
-//            jComboBox1.setModel(model);
+                  jComboBox1.setModel(model);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al cargar departamentos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -561,7 +561,7 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnListar;
     private javax.swing.JButton btnOk;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<Departamento> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
